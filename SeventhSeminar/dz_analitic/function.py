@@ -15,7 +15,7 @@
 #     csv = pandas.read_csv('telefonsbook.csv', delimiter=',')
 #     print(csv)
 
-
+#######################################################################################################
 # def search_surname(surname):  # поиск по фамилии (encoding="utf-8")
 #     import io
 #     with io.open('data_base.csv', 'r') as file:
@@ -28,6 +28,14 @@
 #             print('Такого контакта не найденно')
 
 
+# def search_surname(surname):  # поиск по фамилии (encoding="utf-8")
+#     import pandas
+#     csv = pandas.read_csv('telefonsbook.csv', delimiter=',')
+#     csv_tall = csv[csv['Фамилия'] == surname]
+#     print(csv_tall)
+
+
+#########################################################################################################
 # def add_a_note(surname, name, lastname, tel, text):  # добавить запись в базу данных взяв их с консоли (нужно делать проверки на корректность введенных данных)
 #     with open('data_base.csv', 'a+') as file:
 #         file.write(surname + ' ')
@@ -36,30 +44,32 @@
 #         file.write(tel + ' ')
 #         file.write(text + '\n')
 
+# def add_a_note(data):  # добавить запись в базу данных взяв их с консоли через лист
+#     with open('data_base.csv', 'a+') as file:
+#         file.write(data + '\n')
+
 
 # def add_a_note(surname, name, lastname, tel, text):  # добавить запись в базу данных
 # # Append Pandas DataFrame to Existing CSV File
 # # importing pandas module
-# import pandas as pd
+#     import pandas as pd
 # # data of Player and their performance
-# data = {
-#     'Фамилия': ['Hardik', 'Pollard', 'Bravo'],
-#     'Run': [50, 63, 15],
-#     'Wicket': [0, 2, 3],
-#     'Catch': [4, 2, 1]
-# }
-#
+#     data = {
+#         'Фамилия': [surname],
+#         'Имя': [name],
+#         'Отчество': [lastname],
+#         'Телефон': [tel],
+#         'Описание': [text]
+#     }
 # # Make data frame of above data
-# df = pd.DataFrame(data)
-#
+#     add = pd.DataFrame(data)
 # # append data frame to CSV file
-# df.to_csv('GFG.csv', mode='a', index=False, header=False)
-#
+#     add.to_csv('telefonsbook.csv', mode='a', index=False, header=False)
 # # print message
-# print("Data appended successfully.")
+#     print("Data appended successfully.")
 
 
-# def delete_entry(): # удалить запись с бд взяв с консоли
+# def delete_entry():  # удалить запись с бд взяв с консоли
 #     import re
 #     with open('data_base.csv', 'r') as fi:
 #         lines = fi.readlines()
@@ -70,6 +80,22 @@
 #             result = pattern.search(lin)
 #             if result is None:
 #                 f.write(lin)
+#
+#
+# def delete_entry(surname, name, lastname):  # удалить запись с бд взяв с консоли
+#     import pandas
+#     csv = pandas.read_csv('telefonsbook.csv', delimiter=',')
+#     df = csv[::]
+#     df = df.drop(df[(df.Фамилия == surname) & (df.Имя == name) & (df.Отчество == lastname)].index)
+#     print(df)
+#
+#
+# def search_surname(surname, name, lastname):  # поиск по фамилии (encoding="utf-8")
+#     import pandas
+#     csv = pandas.read_csv('telefonsbook.csv', delimiter=',')
+#     csv_tall = csv[(csv['Фамилия'] == surname) & (csv['Имя'] == name) & (csv['Отчество' == lastname])]
+#     print(csv_tall)
+#     csv_tall = csv_tall.drop()
 
 
 # def data_import(): # Импорт из какого-то файла csv (добавление в бд из файла другого в нескольких форматах,
@@ -83,10 +109,33 @@
 
 # surname = input('Введите фамилию: ')
 # search_surname(surname)
-
+#
 # surnam = input("Фамилия: ")
 # nam = input("Имя: ")
 # lastnam = input('Отчество: ')
 # telef = input("Телефон: ")
 # txt = input('Описание: ')
 # add_a_note(surnam, nam, lastnam, telef,txt)
+
+#
+# delete_entry(surnam, nam, lastnam)
+
+import pandas as pd
+from io import StringIO
+
+mystr = StringIO("""speed,time,date
+12,22:05,1
+15,22:10,1
+13,22:15,1""")
+
+# replace mystr with 'file.csv'
+df = pd.read_csv(mystr)
+
+# convert time column to timedelta, assuming mm:ss
+df['time'] = pd.to_timedelta('00:'+df['time'])
+
+# filter for >= 22:10, i.e. second item
+df = df[df['time'] >= df['time'].loc[1]]
+
+print(df)
+
