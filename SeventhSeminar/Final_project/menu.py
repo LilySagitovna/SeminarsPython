@@ -1,7 +1,4 @@
-from telnetlib import STATUS
-
-
-def menu():
+def show_menu():
     print("Приветствуем Вас в нашем телефонном справочнике!")
     print('''Меню:
     1 Добавить контакт
@@ -16,15 +13,12 @@ def menu():
       ''')
 
 
-menu()
-
-
 def control_menu():
     while True:
         number = input('Выберите нужное действие: ')
         if number.isdigit():
             number = int(number)
-            if number > 0 and number <= 10:
+            if 0 < number < 10:
                 return number
             else:
                 print('Введите правильный выбор в меню')
@@ -33,4 +27,6 @@ def control_menu():
         continue
 
 
-print(control_menu())
+def decor_equals():
+    print("================================================")
+# control_menu()

@@ -69,19 +69,23 @@
 #     print("Data appended successfully.")
 
 
-# def delete_entry():  # удалить запись с бд взяв с консоли
-#     import re
-#     with open('data_base.csv', 'r') as fi:
-#         lines = fi.readlines()
-#     delete = input('Введите фамилию: ')
-#     pattern = re.compile(re.escape(delete))
-#     with open('data_base.csv', 'w') as f:
-#         for lin in lines:
-#             result = pattern.search(lin)
-#             if result is None:
-#                 f.write(lin)
-#
-#
+def delete_entry():  # удалить запись с бд взяв с консоли
+    import re
+    with open('data_base.csv', 'r') as fi:
+        lines = fi.readlines()
+    delete = input('Введите фамилию,имя и отчество в строчку через пробел: ')
+    if delete not in lines:
+        print('Такого контакта не существует в телефонной книге.')
+    else:
+        pattern = re.compile(re.escape(delete))
+        print('Контакт удален!')
+        with open('data_base.csv', 'w') as f:
+            for lin in lines:
+                result = pattern.search(lin)
+                if result is None:
+                    f.write(lin)
+
+
 # def delete_entry(surname, name, lastname):  # удалить запись с бд взяв с консоли
 #     import pandas
 #     csv = pandas.read_csv('telefonsbook.csv', delimiter=',')
@@ -118,24 +122,7 @@
 # add_a_note(surnam, nam, lastnam, telef,txt)
 
 #
-# delete_entry(surnam, nam, lastnam)
+delete_entry()
 
-import pandas as pd
-from io import StringIO
 
-mystr = StringIO("""speed,time,date
-12,22:05,1
-15,22:10,1
-13,22:15,1""")
-
-# replace mystr with 'file.csv'
-df = pd.read_csv(mystr)
-
-# convert time column to timedelta, assuming mm:ss
-df['time'] = pd.to_timedelta('00:'+df['time'])
-
-# filter for >= 22:10, i.e. second item
-df = df[df['time'] >= df['time'].loc[1]]
-
-print(df)
 
