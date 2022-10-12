@@ -1,0 +1,38 @@
+2022-10-12 19:15:29,680 [INFO] - Bot started
+2022-10-12 19:16:09,021 [INFO] - Bot started
+2022-10-12 19:17:46,874 [INFO] - Bot started
+2022-10-12 19:18:43,756 [INFO] - Bot started
+2022-10-12 19:19:06,098 [INFO] - Message /start from ms_lily
+2022-10-12 19:19:06,099 [INFO] - New user ms_lily
+2022-10-12 19:19:14,312 [INFO] - Message Ещё не определился from ms_lily
+2022-10-12 19:19:14,313 [INFO] - User ms_lily selects: Ещё не определился
+2022-10-12 19:19:17,623 [INFO] - Message Комплексные from ms_lily
+2022-10-12 19:19:17,623 [INFO] - User ms_lily selects: Комплексные
+2022-10-12 19:19:37,291 [INFO] - Message 2+3i from ms_lily
+2022-10-12 19:19:47,331 [INFO] - Message 2+3j from ms_lily
+2022-10-12 19:20:12,417 [INFO] - Message /start from ms_lily
+2022-10-12 19:20:12,420 [INFO] - New user ms_lily
+2022-10-12 19:20:15,619 [INFO] - Message Комплексные from ms_lily
+2022-10-12 19:20:15,619 [INFO] - User ms_lily selects: Комплексные
+2022-10-12 19:20:26,957 [INFO] - Message 2+3j from ms_lily
+2022-10-12 19:20:33,305 [INFO] - Message * from ms_lily
+2022-10-12 19:20:45,650 [INFO] - Message 5-7j from ms_lily
+2022-10-12 19:20:48,360 [INFO] - Message результат from ms_lily
+2022-10-12 19:22:03,314 [INFO] - Message /start from ms_lily
+2022-10-12 19:22:03,315 [INFO] - New user ms_lily
+2022-10-12 19:22:05,199 [INFO] - Message Рациональные from ms_lily
+2022-10-12 19:22:05,200 [INFO] - User ms_lily selects: Рациональные
+2022-10-12 19:22:09,009 [INFO] - Message 7 from ms_lily
+2022-10-12 19:22:12,047 [INFO] - Message - from ms_lily
+2022-10-12 19:22:18,950 [INFO] - Message 3.5 from ms_lily
+2022-10-12 19:22:23,766 [INFO] - Message 3.5 from ms_lily
+2022-10-12 19:23:00,034 [INFO] - Bot started
+2022-10-12 21:21:56,429 [INFO] - Bot started
+2022-10-12 21:22:22,082 [INFO] - Message /start from ms_lily
+2022-10-12 21:22:22,083 [INFO] - New user ms_lily
+2022-10-12 21:22:27,863 [INFO] - Message Комплексные from ms_lily
+2022-10-12 21:22:27,864 [INFO] - User ms_lily selects: Комплексные
+2022-10-12 21:22:37,766 [INFO] - Message 2+3j from ms_lily
+2022-10-12 21:22:40,377 [INFO] - Message * from ms_lily
+2022-10-12 21:22:47,771 [INFO] - Message 5-2j from ms_lily
+2022-10-12 21:22:50,728 [INFO] - Message результат from ms_lily
